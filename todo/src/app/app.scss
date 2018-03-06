@@ -1,0 +1,158 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@import "./animate";
+$marginDefault: 16px;
+$dotSize: 6px;
+$buttonSize: 3em;
+.toolbar-background{
+  border: none !important;
+}
+.toolbar-title{
+  color: #181743;
+  text-transform: uppercase;
+  font-family: "Baboo-regular" !important;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.header-md:after{
+  height: 0;
+}
+.header-title{
+  font-size: 2rem;
+  color: #181743;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  padding: 0 !important;
+}
+.modal-wrapper{
+  height: 100% !important;
+  width: 100% !important;
+  top: 0; 
+  left: 0;
+}
+.background-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../assets/imgs/background.png")
+}
+.button-header{
+    color: #FE1E9A;
+}
+.todo-content {
+  padding: 10px;
+  .work-item {
+    background: white;
+    margin-bottom: $marginDefault;
+    border-radius: 10px;
+    min-height: 10vh;
+    position: relative;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .1);
+    .dot-color {
+      height: $dotSize;
+      width: $dotSize;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+    .work-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .work-name {
+      white-space: nowrap;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .date-time {
+      .work-date {
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: bold;
+        text-align: center;
+      }
+      .work-time {
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  .footer-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: flex-end;
+  }
+  .backdropt {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffffff,#CAEBFE);
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .button-footer {
+    z-index: 10;
+    display: flex;
+    padding-bottom: 1rem;
+    align-items: center;
+    .f-button {
+      transition: 300ms;
+      transform: scale(1);
+      filter: brightness(100%);
+      height: $buttonSize;
+      width: $buttonSize;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 2rem;
+      &.larger {
+        height: $buttonSize * 1.5;
+        width: $buttonSize * 1.5;
+        ion-icon{
+            font-size: 2.2em;
+        }
+      }
+      ion-icon{
+          font-size: 1.6em;
+          font-weight: bolder;
+      }
+    }
+    .f-button:active{
+      transform: scale(.94);
+      filter: brightness(120%);
+    }
+  }
+}

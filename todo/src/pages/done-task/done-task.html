@@ -1,0 +1,50 @@
+<!--
+  Generated template for the DoneTaskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-olny navPop>
+        <!-- <ion-icon name="arrow-back"></ion-icon> -->
+        <img src="../assets/icon/arrow-back.png" alt="">
+      </button>
+    </ion-buttons>
+    <ion-title text-center class="header-title">Done Task</ion-title>
+    <ion-buttons right style="opacity: 0">
+      <button ion-button icon-olny navPop>
+        <!-- <ion-icon name="arrow-back"></ion-icon> -->
+        <img src="../assets/icon/arrow-back.png" alt="">
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="background-image">
+    <div class="todo-content">
+      <ion-row (click)="goToDetail(item)" tappable *ngFor="let item of listFillter" class="work-item" align-items-center>
+        <div [style.color]="item.color" class="dot-color">
+          <ion-icon name="checkmark"></ion-icon>
+        </div>
+        <ion-col col-3 class="work-icon">
+          <!-- <ion-icon name="{{item.icon}}"></ion-icon> -->
+          <img src="{{item.icon}}" alt="">
+        </ion-col>
+        <ion-col col-6 class="work-name">
+          <span>{{item.name}}</span>
+        </ion-col>
+        <ion-col col-3 class="date-time">
+          <div class="work-date">
+            <span>{{item.dateString}}</span>
+          </div>
+          <div class="work-time">
+            <span>{{item.timeString}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- <div class="fake-height"></div> -->
+    </div>
+  </ion-content>

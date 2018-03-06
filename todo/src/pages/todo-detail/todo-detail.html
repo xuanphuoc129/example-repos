@@ -1,0 +1,33 @@
+<!--
+  Generated template for the TodoDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content >
+  <div class="backdropt" (click)="closeView()" tappable></div>
+  <div class="detail-container animated zoomIn">
+    <div class="d-header">
+      <div class="icon">
+        <img src="{{todo.icon}}" alt="">
+      </div>
+      <div class="name">
+        <span>{{todo.name}}</span>
+      </div>
+      <div class="date-time">
+        <span>{{todo.date | date: 'd LLLL'}}, </span>
+        <span> {{todo.time | date: 'HH : mm'}}</span>
+      </div>
+    </div>
+    <div class="d-description">
+      <div text-center class="title"><span>Description</span></div>
+      <div class="description" text-left>
+        {{todo.description}}
+      </div>
+    </div>
+    <button class="f-button" (click)="checkDone()">Done</button>
+  </div>
+</ion-content>

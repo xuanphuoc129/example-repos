@@ -1,0 +1,157 @@
+page-home {
+  .todo-content {
+    height: 100%;
+    overflow: scroll;
+  }
+  .fake-height {
+    height: 20vh;
+  }
+  .close {
+    box-shadow: 0 3px 6px rgba($color: #181743, $alpha: .3);
+    background: linear-gradient(to left, #88889F, #181743);
+    color: white;
+  }
+  .checkmark {
+    box-shadow: 0 3px 6px rgba($color: #fe1e95, $alpha: .3);
+    background: linear-gradient(to right, #FE1E9A, #254DDE);
+    color: white;
+  }
+  .larger {
+    box-shadow: 0 3px 6px rgba($color: #181743, $alpha: .2);
+    background: white;
+    color: #FEA64C;
+  }
+  .add {
+    box-shadow: 0 3px 6px rgba($color: #00ffff, $alpha: .3);
+    background: linear-gradient(to right, #00FFFF, #254DDE);
+    color: white;
+    ion-icon {
+      font-weight: bold;
+    }
+  }
+  .checkbox-ios .checkbox-checked {
+    background: transparent;
+    border-color: #181743;
+  }
+  .checkbox-md .checkbox-checked {
+    background: transparent;
+    border-color: #181743;
+  }
+  ion-checkbox {}
+  .checkbox-ios .checkbox-icon {
+    box-shadow: 0 3px 6px rgba($color: #FE1E9A, $alpha: .1);
+    border-radius: 5px;
+  }
+  .checkbox-ios .checkbox-checked .checkbox-inner {
+    border-color: #7B3AC3;
+    border-width: 3px;
+    width: 6px;
+    height: 11px;
+    border-top-width: 0;
+    border-left-width: 0;
+  }
+  .checkbox-md .checkbox-icon {
+    box-shadow: 0 3px 6px rgba($color: #FE1E9A, $alpha: .1);
+    border-radius: 5px;
+    height: 26px;
+    width: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .checkbox-md .checkbox-checked .checkbox-inner {
+    border-color: #7B3AC3;
+    border-width: 3px;
+    width: 6px;
+    height: 11px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    border-top-width: 0;
+    border-left-width: 0;
+  }
+  $dotSize: 6px;
+  .todo-calendar-mode {
+    height: 100%;
+    overflow: scroll;
+    .calendar {
+      white-space: nowrap;
+      overflow: scroll;
+      background: white;
+      color: #181743;
+      .calendar-block {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        padding: 10px;
+        width: 14.3333333%;
+        &.selected{
+          
+        }
+        .number{
+          font-size: 1.6rem;
+        }
+        .day-of-week{
+          font-size: 1.2rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .dot {
+          height: $dotSize;
+          width: $dotSize;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background: black;
+        }
+      }
+    }
+    .list-container {
+      margin-top: 1.6rem;
+     
+      .item-container {
+        display: flex;
+        align-items: center;
+        padding: .6rem;
+        .time {
+          width: 20%;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .number{
+            width: 60%;
+            text-align: right;
+            color: #181743;
+            opacity: 80%;
+            font-size: 1.2rem;
+          }          
+          .dot {
+            height: $dotSize;
+            width: $dotSize;
+            border-radius: 50%;
+            margin-right: 1rem;
+            opacity: .3;
+          }
+        }
+        .td-content {
+          width: 80%;
+          background: white;
+          border-radius: 5px;
+          padding: 1rem 0;
+          .name{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #181743;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

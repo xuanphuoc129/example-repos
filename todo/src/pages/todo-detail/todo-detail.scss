@@ -1,0 +1,73 @@
+page-todo-detail {
+    ion-content.content{
+        background: rgba($color: #000000, $alpha: .4);
+    }
+    .backdropt{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+  .detail-container {
+    z-index: 10;
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    top: 20%;
+    animation-duration: 500ms;
+    .d-header{
+        background: #F9F9FA;
+        padding: 1rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        .icon{
+            margin-top: 1rem;
+        }
+        .name{
+            font-weight: bold;
+            font-size: larger;
+            color: #181743;
+            margin-top: 2rem;
+        }
+        .date-time{
+            color: #181743;
+            padding-bottom: 1rem;
+            margin-top: .6rem;
+        }
+    }
+    .d-description{
+        padding: 1rem;
+        max-height: 30vh;
+        min-height: 30vh;
+        overflow: scroll;
+        .description{
+            color: #95989A;
+            margin-top: 1rem;
+            white-space: pre-line;
+            text-align: left;
+        }
+
+    }
+    .f-button{
+        background: linear-gradient(to right, #254DDE, #00FFFF);
+        color: white;
+        margin: 1rem 0;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 1rem 2rem;
+        box-shadow: 0 3px 6px rgba($color: #00FFFF, $alpha: .3);
+        transition: 200ms;
+        transform: scale(1);
+        font-size: larger;
+    }
+    .f-button:active{
+        transform: scale(1.06);
+    }
+  }
+
+}

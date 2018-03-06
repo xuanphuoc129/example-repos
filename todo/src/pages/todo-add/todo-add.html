@@ -1,0 +1,65 @@
+<!--
+  Generated template for the TodoAddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+  <div class="backdropt" (click)="closeView()" tappable></div>
+  <div class="ta-container animated slideInRight" #taContainer>
+    <div class="background-image"></div>
+    <div class="header-title">
+      <span>New Task</span>
+    </div>
+    <div class="icon-group">
+      <div class="title">
+        <span>Icon</span>
+      </div>
+      <ion-row align-items-center>
+        <ion-col col-2 *ngFor="let icon of icons; let i = index" tappable (click)="selectedIcon(i)">
+          <img src="{{icon.icon}}" alt="">
+          <div [style.background]="icon.color" class="dot" *ngIf="indexIconActive == i"></div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="name">
+      <div class="title">
+        <span>Name</span>
+      </div>
+      <ion-item no-padding>
+        <ion-input [(ngModel)]="todo.name" clearInput type="text"></ion-input>
+      </ion-item>
+      <div class="line-border"></div>
+    </div>
+    <div class="description">
+      <div class="title">
+        <span>Description</span>
+      </div>
+      <ion-textarea [(ngModel)]="todo.description" rows="3"></ion-textarea>
+    </div>
+    <div class="date">
+      <div class="title">
+        <span>Date</span>
+      </div>
+      <ion-item no-padding>
+        <ion-icon item-end name="arrow-dropdown"></ion-icon>
+        <ion-datetime displayFormat="D - MMMM - YYYY" [(ngModel)]="date"></ion-datetime>
+      </ion-item>
+      <div class="line-border"></div>
+    </div>
+    <div class="time">
+      <div class="title">
+        <span>Time</span>
+      </div>
+      <ion-item no-padding>
+        <ion-icon item-end name="arrow-dropdown"></ion-icon>
+        <ion-datetime displayFormat="HH : mm" [(ngModel)]="time"></ion-datetime>
+      </ion-item>
+      <div class="line-border"></div>
+    </div>
+    <button class="f-button" (click)="add()">Add</button>
+  </div>
+</ion-content>

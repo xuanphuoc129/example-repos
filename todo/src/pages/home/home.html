@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button style="opacity: 0" ion-button class="button-header">
+        <img src="../assets/icon/menu_1.png" alt="">
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="!isCalendarMode" text-center class="header-title">{{title}}</ion-title>
+    <ion-title *ngIf="isCalendarMode" text-center class="header-title">{{today | date: 'LLLL yyyy'}}</ion-title>
+
+    <ion-buttons right>
+      <button ion-button class="button-header" (click)="goToDoneTask()">
+        <img src="../assets/icon/menu_1.png" alt="">
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">
+  <div class="todo-content" *ngIf="!isCalendarMode">
+    <ion-row tappable (click)="goToDetail(item)" tappable *ngFor="let item of listFillter" class="work-item" align-items-center>
+      <div [style.background-color]="item.color" class="dot-color"></div>
+      <ion-col col-2 class="work-icon">
+        <img src="{{item.icon}}" alt="">
+      </ion-col>
+      <ion-col col-7 class="work-name">
+        <span>{{item.name}}</span>
+      </ion-col>
+      <ion-col *ngIf="!ischeckMarkMode" col-3 class="date-time animated fadeIn">
+        <div class="work-date">
+          <span >{{item.dateString}}</span>
+        </div>
+        <div class="work-time">
+          <span>{{item.timeString}}</span>
+        </div>
+      </ion-col>
+      <ion-col col-2 offset-1 *ngIf="ischeckMarkMode" class="animated fadeIn" >
+        <ion-checkbox [(ngModel)]="item.state" ></ion-checkbox>
+      </ion-col>
+    </ion-row>
+    <div class="fake-height"></div>
+  </div>
+
+  <div class="todo-calendar-mode" *ngIf="isCalendarMode">
+    <div class="calendar">
+      <div class="calendar-block" *ngFor="let day of listDayInMonth; let i = index" [class.selected]="i==daySelected">
+        <div class="number">
+          <span>{{day.date}}</span>
+        </div>
+        <div class="day-of-week">
+          <span>{{day.dayOfWeek.substring(0,3)}}</span>
+        </div>
+        <div class="dot" *ngIf="i != daySelected"></div>
+      </div>
+    </div>
+    <div class="list-container">
+      <div class="item-container" *ngFor="let item of listFillter">
+        <div class="time">
+          <div class="number">
+            <span>{{item.timeString}}</span>
+          </div>
+          <div class="dot" [style.background]="item.color"></div>
+        </div>
+        <ion-row align-items-center class="td-content" (click)="goToDetail(item)" tappable>
+          <ion-col col-2 text-center>
+            <img src="{{item.icon}}" alt="">
+          </ion-col>
+          <ion-col class="name">
+            <span>{{item.name}}</span>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div class="fake-height"></div>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="backdropt"></div>
+
+      <div *ngIf="!ischeckMarkMode" class="button-footer animated fadeIn">
+        <button class="f-button checkmark" (click)="checkMarkMode()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+        <button class="f-button larger" (click)="changeCalendarMode()">
+          <img *ngIf="isCalendarMode" src="../assets/icon/calendar.png" alt="">
+          <img *ngIf="!isCalendarMode" src="../assets/icon/menu_2.png" alt="">
+        </button>
+        <button class="f-button add" (click)="goToAddTodo()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </div>
+
+      <div *ngIf="ischeckMarkMode" class="button-footer animated fadeIn">
+        <button class="f-button close" (click)="checkMarkMode()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+        <button class="f-button checkmark" (click)="checkAllDone()">
+          <ion-icon name="done-all"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,187 @@
+page-todo-add {
+    ion-content.content{
+        background: rgba($color: #000000, $alpha: .4);
+    }
+    .input-md .text-input-clear-icon{
+        background-size: 1.2rem;
+        right: 0;
+    }
+    .col{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        transition: 200ms;
+        filter: brightness(100%);
+        .dot{
+            height: 4px;
+            width: 4px;
+            border-radius: 50%;
+            position: absolute;
+            top: -2px;
+            left: 0px;
+            // background: black;
+        }
+    }
+    .col:active{
+        filter: brightness(140%);
+    }
+    .datetime-md{
+        padding: 0;
+        color: #181743;
+        font-size: 1.2rem;
+    }
+    .datetime-ios{
+        padding: 0;
+        color: #181743;
+        font-size: 1.2rem;
+    }
+    .backdropt{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+    .item-md.item-input.input-has-focus .item-inner{
+        border: none;
+        box-shadow: none;
+    }
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+        border: none;
+        box-shadow: none;
+    }
+    .item-md.item-block .item-inner{
+        padding: 0;
+        border: none;
+    }
+    .item-md{
+        background: none;
+        font-size: 1.2rem;
+        padding: .6rem 0 !important;
+    }     
+    .item-ios{
+        background: none;
+        font-size: 1.2rem;
+        padding: .6rem 0 !important;
+    }     
+    .text-input{
+        margin : 0;
+        font-size: 1.2rem;
+        color: #181743;
+        width: 100%;
+    }
+    .item > ion-icon, .item-inner > ion-icon{
+        font-size: 1.6rem;
+        min-height: unset;
+    }
+    .item-ios [item-right], .item-ios [item-end]{
+        margin: 8px 0;
+    }
+    .item-md [item-right], .item-md [item-end]{
+        margin: 8px 0;
+    }
+    .item-block{
+        min-height : 1rem;
+        max-height: 3rem;
+    }
+    .scroll-content{
+        padding : 0 !important;
+    }
+    .item-ios.item-input.input-has-focus .item-inner{
+        border: none;
+        box-shadow: none;
+    }
+    .ta-container{
+
+        z-index: 10;
+        padding: 1.8rem;
+        width: 80%;
+        margin-left: 20%;
+        animation-duration: 500ms;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        height: 100%;
+        position: relative;
+        background: white;
+        .background-image{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+        .icon-group{
+            line-height: 2.6rem;
+        }
+        .name{
+            position: relative;
+           
+        }
+        .line-border{
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to right, #FE1E9A,#254DDE);
+            opacity: .84;
+        }
+        .description{
+            .title{
+                margin-bottom: 1.6rem;
+
+            }
+        }
+        .date{
+            position: relative;
+        }
+        .time{
+            position: relative;
+        }
+        ion-textarea{
+            border : 1px solid rgba($color: #181743, $alpha: .2);
+            border-radius: 5px;
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+        .f-button{
+            background: linear-gradient(to right, #254DDE, #00FFFF);
+            color: white;
+            margin: 3rem 0;
+            font-weight: bold;
+            border-radius: 26px;
+            padding: 2rem 5rem;
+            box-shadow: 0 3px 6px rgba($color: #00FFFF, $alpha: .3);
+            transition: 200ms;
+            transform: scale(1);
+            font-size: 1.6rem;
+        }
+        .f-button:active{
+            transform: scale(1.06);
+        }
+       
+    }
+    .item-ios.item-block .item-inner{
+        border-bottom: none;
+        padding-right: 0;
+    }
+    .header-title{
+        text-transform: uppercase;
+        color: #181743;
+        font-weight: bold;
+        font-size: larger;
+        margin-bottom: 2rem;
+    }
+    .title{
+        color: #181743;
+        opacity: .2;
+        text-transform: capitalize;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+        
+}
